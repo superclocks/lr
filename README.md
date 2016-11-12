@@ -1,2 +1,3 @@
 - FTRL和SVRG算法实现的LR模型，稀疏存储格式
 - sgdpy中是Python的仿真程序
+- NEW LINE
