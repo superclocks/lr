@@ -1,0 +1,25 @@
+/*************************************************************************
+	> File Name: sgd.h
+	> Author: ma6174
+	> Mail: ma6174@163.com 
+	> Created Time: 2015年05月27日 星期三 08时57分13秒
+ ************************************************************************/
+
+#include <iostream>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "loss_func.h"
+using namespace std;
+
+typedef double (*obj_pt)(double* x, double* w, int n);
+typedef void (*grad_pt)(double* x, double y, double* w, int n, double* g);
+
+//path输入文件路径
+//m样本个数
+//n特征个数
+void meanGrad(char* path,grad_pt grad1, int m, int n, double* w, double* mg);
+void update(double* w0, double* g1, double* g2, double* mg, int n, double rat, int k);
+void svrgTrain(char* path, obj_pt obj1, grad_pt grad1, int m, int n, int k, double rat, double tol, double* w);
+void predictor(char* path, double* w, int n);
